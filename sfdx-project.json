@@ -5,7 +5,11 @@
       "default": true
     }
   ],
+<<<<<<< HEAD
   "name": "HealthLifePro",
+=======
+  "name": "Health Life Pro",
+>>>>>>> 5115a92 (First commit)
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "63.0"
