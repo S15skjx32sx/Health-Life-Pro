@@ -1,0 +1,77 @@
+<template>
+  <div class="container">
+    <h2 class="title">Registration Form</h2>
+    <div class="form-wrapper">
+      <div class="form-left">
+        <img src={bannerImage} alt="Start Training Today" />
+      </div>
+      <div class="form-right">
+        <div class="form-icons">
+          <img src={registerIcon} alt="Form Icon" />
+          <img src={payIcon} alt="Pay Icon" />
+        </div>
+        <form onsubmit={handleSubmit}>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="First_Name__c" required />
+
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="Last_Name__c" required />
+
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="Phone__c" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email__c" required />
+
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="Date_of_Birth__c" />
+
+          <label for="gender">Gender</label>
+          <select id="gender" name="Gender__c">
+            <option value="">--None--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label for="district">District</label>
+          <select id="district" name="District__c">
+            <option value="">-- none selected --</option>
+            <option value="Mirzapur">Mirzapur</option>
+            <option value="Varanasi">Varanasi</option>
+            <option value="Prayagraj">Prayagraj</option>
+          </select>
+
+          <label for="timeSlot">Time Slot</label>
+          <select id="timeSlot" name="Time_Slot__c">
+            <option value="">--None--</option>
+            <option>6 AM - 7 AM</option>
+            <option>7 AM - 8 AM</option>
+            <option>6 PM - 7 PM</option>
+          </select>
+
+          <label for="membershipPlan">Membership Plan</label>
+          <select id="membershipPlan" name="Membership_Plan__c">
+            <option value="">--None--</option>
+            <option>Basic</option>
+            <option>Standard</option>
+            <option>Premium</option>
+          </select>
+
+          <label for="subscriptionType">Subscription Type</label>
+          <select id="subscriptionType" name="Subscription_Type__c">
+            <option value="">--None--</option>
+            <option>Monthly</option>
+            <option>Quarterly</option>
+            <option>Yearly</option>
+          </select>
+
+          <label for="regName">Registration Form Name</label>
+          <input type="text" id="regName" name="Name" />
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

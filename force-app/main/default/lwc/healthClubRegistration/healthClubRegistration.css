@@ -1,0 +1,145 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+}
+
+
+
+.title {
+  text-align: center;
+  color: #e18100;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.form-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.form-wrapper:hover {
+  background-color: #fffef8;
+  transition: background-color 0.3s ease;
+  border-radius: 12px;
+}
+
+
+.form-left img {
+  width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e18100; /* 🔶 added border */
+}
+
+.form-right {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  width: 100%;
+  border: 2px solid #e18100; /* 🔥 Added border here */
+}
+.form-right:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(225, 129, 0, 0.3);
+  border-color: #ff9900;
+  transition: all 0.3s ease;
+}
+
+
+
+.form-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-icons img{
+  height: 40px;
+}
+
+/* Input and Select Styles */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+form input:hover,
+form select:hover {
+  border-color: #aaa;
+  box-shadow: 0 0 5px rgba(225, 129, 0, 0.1);
+}
+
+/* Focus effect */
+form input:focus,
+form select:focus {
+  border-color: #e18100;
+  outline: 2px solid #e18100; /* Increased thickness and set color */
+}
+
+
+/* Label styling */
+form label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Submit Button styling */
+form button[type="submit"] {
+  background-color: #ff9800;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #d77f00;
+}
+
+/* Validation States */
+input.invalid,
+select.invalid {
+  border: 3px solid #e53935 !important;
+  background-color: #fff5f5;
+}
+
+input.valid,
+select.valid {
+  border: 3px solid #43a047 !important;
+  background-color: #f1fff2;
+}
+
+/* Optional: Error Message Style */
+.error-message {
+  color: #e53935;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
