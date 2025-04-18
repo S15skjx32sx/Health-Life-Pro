@@ -1,0 +1,169 @@
+<template>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">Health Life Pro</div>
+  
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger" onclick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+      <!-- Navigation Menu -->
+      
+      <nav class={navClass}>
+        <ul>
+          <li><a href="#">Enquiry</a></li>
+          <li><a href="#">Member</a></li>
+          <li><a href="#">Subscription</a></li>
+          <li><a href="#">Payment</a></li>
+          <li><a href="#">Fitness Trainer</a></li>
+          <li><a href="#">Fitness Classes</a></li>
+          <li><a href="#">Diet Chart</a></li>
+          <li><a href="#">Survey Plan</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <section class="services">
+          <h2>Explore Our Services</h2>
+          <div class="services-container">
+            <div class="service-card">General Checkup</div>
+            <div class="service-card">Personal Training</div>
+            <div class="service-card">Yoga Classes</div>
+            <div class="service-card">Diet Planning</div>
+            <div class="service-card">Physiotherapy</div>
+            <div class="service-card">Weight Loss Program</div>
+          </div>
+        </section>
+        <button class="registration-btn" onclick={goToRegistration}>Registration</button>
+      </div>
+    </section>
+  
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+      <h2>Why Choose Us?</h2>
+      <div class="features">
+        <div class="feature-card">
+          <img src={trainerImg} alt="Professional Trainers" />
+          <h3>Professional Trainers</h3>
+          <p>Our certified trainers provide personalized fitness plans tailored to your needs.</p>
+        </div>
+        <div class="feature-card">
+          <img src={modernGymImg} alt="Modern Equipment" />
+          <h3>State-of-the-Art Equipment</h3>
+          <p>We use the latest equipment to ensure you get the best workout experience.</p>
+        </div>
+        <div class="feature-card">
+          <img src={nutritionImg} alt="Nutrition Guidance" />
+          <h3>Expert Nutrition Advice</h3>
+          <p>Get nutrition tips from our experts to complement your workout for better results.</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- About Section -->
+    <section class="about-us">
+      <div class="about-content">
+        <div class="text-content">
+          <h2>About Health Life Pro</h2>
+          <p>At Health Life Pro, we believe in promoting a healthy and active lifestyle...</p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+        <div class="image-content">
+          <img src={aboutImg} alt="Health Life Pro Gym" />
+        </div>
+      </div>
+    </section>
+  
+    <!-- Appointment Section -->
+    <section class="appointment">
+      <div class="appointment-content">
+        <h2>Make an Appointment with a Trainer</h2>
+        <form onsubmit={handleSubmit}>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="trainer">Choose Your Trainer</label>
+            <select id="trainer" required>
+              <option value="trainer1">Trainer 1</option>
+              <option value="trainer2">Trainer 2</option>
+              <option value="trainer3">Trainer 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="appointment-date">Choose Date</label>
+            <input type="date" id="appointment-date" required />
+          </div>
+          <div class="form-group">
+            <label for="appointment-time">Choose Time</label>
+            <input type="time" id="appointment-time" required />
+          </div>
+          <button type="submit" class="btn">Book Now</button>
+        </form>
+      </div>
+    </section>
+  
+    <!-- Blog Section -->
+    <section class="blog-section">
+      <div class="container">
+        <h2 class="section-title">BLOG & ARTICLES</h2>
+        <div class="blog-grid">
+          <template for:each={blogs} for:item="blog">
+            <div key={blog.id} class="blog-card">
+              <img src={blog.img} alt={blog.alt} />
+              <div class="blog-content">
+                <h3>{blog.title}</h3>
+                <p>{blog.desc}</p>
+                <a href="#" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="hlp-footer">
+      <div class="footer-container">
+        <div class="footer-row">
+          <div class="footer-col">
+            <h2 class="footer-logo">Health Life Pro</h2>
+            <p>Your personal gym and fitness partner...</p>
+          </div>
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Enquiry</a></li>
+              <!-- more links... -->
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <p><strong>Phone:</strong> +91 9876543210</p>
+          </div>
+          <div class="footer-col">
+            <h3>Newsletter</h3>
+            <form>
+              <input type="email" placeholder="Your email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Health Life Pro. All rights reserved.</p>
+      </div>
+    </footer>
+  </template>
+  
