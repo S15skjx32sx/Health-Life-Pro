@@ -1,22 +1,23 @@
 <template>
-    <div class="profile-container">
-      <div class="profile-avatar">
-        <img src={avatarUrl} alt="Avatar" />
-      </div>
-      <div class="profile-details">
-        <h2>My Profile</h2>
-        <p><strong>Member ID:</strong> FLP-M-011</p>
-        <p><strong>Name:</strong> Gaurav singh</p>
-        <p><strong>Phone:</strong>9129881654</p>
-        <p><strong>Email:</strong> gauravsingh@gmail.com</p>
-        <p><strong>Branch:</strong> varanasi</p>
-        <p><strong>Time Slot:</strong> Morning Slot - 6am to 12pm</p>
-        <p><strong>Membership:</strong> Platinum</p>
-        <p><strong>Subscription:</strong> Monthly</p>
-        <p><strong>Subscription Start Date:</strong> 2 October 2023</p>
-        <p><strong>Subscription End Date:</strong> 1 November 2023</p>
-        <p><strong>Trainer Name:</strong> the great khali</p>
-        <button>Click here to Renew</button>
-      </div>
-    </div>
-  </template>
+  <div class="profile-details">
+      <h2>My Profile</h2>
+
+      <template if:true={memberData}>
+          <p><strong>Member ID:</strong> {memberData.Id}</p>
+          <p><strong>Name:</strong> {memberData.Full_Name__c}</p>
+          <p><strong>Phone:</strong> {memberData.Phone__c}</p>
+          <p><strong>Email:</strong> {memberData.Email__c}</p>
+          <p><strong>Branch:</strong> {memberData.Related_Gym_Location__c}</p>
+          <p><strong>Time Slot:</strong> {memberData.Fitness_Trainer__r.Availability__c}</p>
+          <p><strong>Membership:</strong> {memberData.Membership_Plan__c}</p>
+          <p><strong>Subscription:</strong> {memberData.Subscription__c}</p>
+          <p><strong>Start Date:</strong> {memberData.Start_Date__c}</p>
+          <p><strong>End Date:</strong> {memberData.End_Date__c}</p>
+          <p><strong>Trainer Name:</strong> {memberData.Fitness_Trainer__r.Name}</p>
+      </template>
+
+      <template if:false={memberData}>
+          <p>Loading...</p>
+      </template>
+  </div>
+</template>

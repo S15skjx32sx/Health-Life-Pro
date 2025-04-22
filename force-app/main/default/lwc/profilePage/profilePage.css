@@ -1,0 +1,76 @@
+/* Center the profile content */
+.profile-avatar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    object-fit: cover;
+}
+
+/* Profile Details Styling */
+.profile-details {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.profile-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 8px 0;
+}
+
+.profile-details p strong {
+    color: #333;
+}
+
+/* Styling the Renewal Button */
+lightning-button {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #0070d2;  /* Blue color */
+    border-radius: 4px;
+    padding: 12px 24px;  /* Add padding for better button size */
+    font-size: 16px;
+    text-align: center;
+    width: auto;  /* Prevent button from stretching full width */
+    box-sizing: border-box;  /* Ensure padding and border are included in button's width */
+}
+
+lightning-button:hover {
+    background-color: #005fa3;  /* Darker blue when hovered */
+}
+
+lightning-button:focus {
+    outline: none;
+    border: 2px solid #005fa3;  /* Add focus styling */
+}
+
+/* Error Handling */
+p.error {
+    color: red;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Overall Layout */
+.slds-p-horizontal_medium {
+    padding-left: 15px;
+    padding-right: 15px;
+}

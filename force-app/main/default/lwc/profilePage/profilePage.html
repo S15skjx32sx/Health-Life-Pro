@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="My Profile">
+      <div class="slds-p-horizontal_medium">
+        <template if:true={member}>
+          <!-- Avatar Section -->
+          <div class="profile-avatar">
+            <img src={avatarUrl} alt="Avatar" />
+          </div>
+  
+          <!-- Profile Details Section -->
+          <div class="profile-details">
+            <h2>{member.Full_Name__c}</h2>
+            <p><strong>Member ID:</strong> {member.Id}</p>
+            <p><strong>Phone:</strong> {member.Phone__c}</p>
+            <p><strong>Email:</strong> {member.Email__c}</p>
+            <p><strong>Address:</strong> {member.Address__c}</p>
+            <p><strong>Gender:</strong> {member.Gender__c}</p>
+            <p><strong>Date of Birth:</strong> {member.Date_of_Birth__c}</p>
+            <p><strong>Start Date:</strong> {member.Start_Date__c}</p>
+            <p><strong>End Date:</strong> {member.End_Date__c}</p>
+            <p><strong>Membership Status:</strong> {member.Membership_Status__c}</p>
+  
+            <!-- Using getter methods to handle conditional rendering -->
+            <p><strong>Membership Plan:</strong> {membershipPlan}</p>
+            <p><strong>Subscription:</strong> {subscription}</p>
+            <p><strong>Fitness Trainer:</strong> {fitnessTrainer}</p>
+            <p><strong>Fitness Classes:</strong> {fitnessClasses}</p>
+            <p><strong>Diet Chart:</strong> {dietChart}</p>
+            <p><strong>Related Gym Location:</strong> {gymLocation}</p>
+            <p><strong>Enquiry:</strong> {enquiry}</p>
+            <p><strong>Payment:</strong> {payment}</p>
+  
+            <lightning-button label="Click here to Renewal" onclick={handleRenewalClick}></lightning-button>
+          </div>
+        </template>
+        <template if:true={error}>
+          <p>{error}</p>
+        </template>
+      </div>
+    </lightning-card>
+  </template>
+  
