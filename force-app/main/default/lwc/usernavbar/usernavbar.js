@@ -1,23 +1,27 @@
 import { LightningElement, track } from 'lwc';
 
 export default class Navbar extends LightningElement { 
+    @track showProfile = false;
     @track isMenuOpen = false;
 
-    // Method to toggle nav menu
+    // Toggle for nav menu (hamburger)
     toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+        this.isMenuOpen = !this.isMenuOpen;
     }
 
-    // Dynamic class assignment based on toggle state
-    get navMenuClass() {
-        return this.isMenuOpen ? 'nav-links active' : 'nav-links';
-    }
+    // Toggle user profile dropdown
     toggleProfile() {
         this.showProfile = !this.showProfile;
     }
 
+    // Close the dropdown when user clicks update
     handleUpdate() {
-        // Add your update logic here
-        alert('Update button clicked');
+        alert('Update clicked');
+        this.showProfile = false;
+    }
+
+    // Dynamic class for nav menu
+    get navMenuClass() {
+        return this.isMenuOpen ? 'nav-links active' : 'nav-links';
     }
 }
