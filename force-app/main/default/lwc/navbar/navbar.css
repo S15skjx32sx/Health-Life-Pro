@@ -55,6 +55,7 @@
   background: white;
   border-radius: 2px;
 }
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .nav-links {

@@ -1,7 +1,6 @@
   /* Hero Section */
   .hero {
     height: 50vh;
-    background: url('../image/hero.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,6 +29,42 @@
     margin-bottom: 15px;
   }
   
+  /* Services Section */
+.services {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+  overflow-x: hidden; /* Prevent horizontal scroll leak */
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: nowrap; /* Make sure it scrolls horizontally */
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+.service-card {
+  color: #111;
+  background: #fff;
+  padding: 30px 20px;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto; /* Prevent shrinking, ensure width */
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover {
+  background: #28a745;
+  color: #fff;
+}
+
+  
   .registration-btn {
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
     color: #fff;
@@ -48,35 +83,6 @@
     background: linear-gradient(45deg, #ff4b2b, #ff416c);
   }
   
-  /* Services Section */
-  .services {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #f8f9fa;
-  }
-  
-  .services-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    scroll-behavior: smooth;
-  }
-  
-  .service-card {
-    color: #111;
-    background: white;
-    padding: 30px;
-    width: 250px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
-    text-align: center;
-  }
-  
-  .service-card:hover {
-    background: #28a745;
-    color: rgba(255, 255, 255, 0.956);
-  }
   
   .why-choose-us {
     padding: 50px 20px;
