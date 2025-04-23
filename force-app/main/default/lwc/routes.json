@@ -1,0 +1,12 @@
+[
+    {
+      "id": "home",
+      "path": "/",
+      "component": "c/homepage"
+    },
+    {
+      "id": "enquiry",
+      "path": "/enquiry",
+    "component": "c/enquiryFrom"
+}
+  ]
