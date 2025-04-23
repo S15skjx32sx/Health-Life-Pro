@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 /* Hero Section */
 .hero {
+=======
+  /* Hero Section */
+  .hero {
+>>>>>>> 082cfc5264cfe195134931f8cd76f2de8d365e71
     height: 50vh;
     background: url('../image/hero.jpg') center/cover no-repeat;
     display: flex;
