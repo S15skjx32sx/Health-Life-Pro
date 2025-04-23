@@ -1,0 +1,12 @@
+[
+{
+    "id": "nav",
+    "path": "/",
+    "component": "c/navbar"
+  },
+  {
+    "id": "trainer",
+    "path": "/trainer",
+    "component": "c/trainerList"
+  }
+]
