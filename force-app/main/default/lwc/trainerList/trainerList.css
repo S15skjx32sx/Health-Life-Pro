@@ -17,8 +17,6 @@
   padding: 20px;
   width: 220px;
   margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 10px;
   border-radius: 10px; /* curved corners */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -63,8 +61,6 @@
   padding: 20px;
   text-align: center;
   transition: transform 0.3s;
-  width: 100%;
-  height: 100%;;
 }
 
 .trainer-card:hover {
@@ -93,18 +89,14 @@
   }
 
   .sidebar {
-      width: 40%;
+      width: 100%;
       display: none;
   }
 
   .sidebar.open {
       display: block;
   }
-  .trainer-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
   .hamburger {
       display:inline-table;
       background: #918c8c;
