@@ -1,0 +1,43 @@
+<template>
+    <header class="navbar">
+      <div class="logo">Health Life Pro</div>
+  
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger" onclick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+      <!-- Navigation Menu -->
+      <nav>
+        <ul class={navMenuClass}>
+          <li><a href="#">Enquiry</a></li>
+          <li><a href="#">Member</a></li>
+          <li><a href="#">Subscription</a></li>
+          <li><a href="#">Payment</a></li>
+          <li><a href="#">Fitness Trainer</a></li>
+          <li><a href="#">Fitness Classes</a></li>
+          <li><a href="#">Diet Chart</a></li>
+          <li><a href="#">Survey Plan</a></li>
+          
+        </ul>
+      </nav>
+  
+      <!-- User Profile Section -->
+      <div class="user-profile" onclick={toggleProfile}>
+        <img src="profile-avatar.png" alt="User Avatar" class="avatar" />
+      </div>
+  
+      <!-- Profile Dropdown -->
+      <template if:true={showProfile}>
+        <div class="profile-dropdown">
+          <p><strong>Name:</strong> John Doe</p>
+          <p><strong>Member ID:</strong> #12345</p>
+          <p><strong>Email:</strong> john.doe@example.com</p>
+          <button onclick={handleUpdate}>Update</button>
+        </div>
+      </template>
+    </header>
+  </template>
+  
