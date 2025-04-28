@@ -6,7 +6,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class EnquiryForm extends LightningElement {
     appImage = ApplicationImage;
 
-    @track fullName = '';
+    @track fullname = '';
     @track email = '';
     @track phone = '';
     @track message = '';
@@ -33,7 +33,7 @@ export default class EnquiryForm extends LightningElement {
     ];
 
     handleNameChange(event) {
-        this.fullName = event.target.value;
+        this.fullname = event.target.value;
     }
     handleEmailChange(event) {
         this.email = event.target.value;
@@ -63,10 +63,16 @@ export default class EnquiryForm extends LightningElement {
         this.sendRegLink = event.target.checked;
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    handleSubmit() {
+        console.log("hello jeet");
+        console.log(this.fullname);
+        console.log(this.email);
+        console.log(this.phone);
+        console.log(this.message);
+
+        // event.preventDefault();
         saveEnquiry({
-            name: this.fullName,
+            fullname: this.fullname,
             email: this.email,
             phone: this.phone,
             message: this.message,
@@ -97,7 +103,7 @@ export default class EnquiryForm extends LightningElement {
     }
 
     clearForm() {
-        this.fullName = '';
+        this.fullname = '';
         this.email = '';
         this.phone = '';
         this.message = '';

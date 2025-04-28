@@ -23,8 +23,4 @@ export default class HealthlifeproHomepage extends LightningElement {
     // Clear the interval when component is destroyed
     clearInterval(this.intervalId);
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 082cfc5264cfe195134931f8cd76f2de8d365e71

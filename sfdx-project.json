@@ -5,11 +5,7 @@
       "default": true
     }
   ],
-<<<<<<< HEAD
   "name": "Salesforceproject",
-=======
-  "name": "HealthLifePro",
->>>>>>> 082cfc5264cfe195134931f8cd76f2de8d365e71
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "63.0"
