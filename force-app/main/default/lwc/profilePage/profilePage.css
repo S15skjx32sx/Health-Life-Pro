@@ -1,76 +1,103 @@
-/* Center the profile content */
-.profile-avatar {
-    text-align: center;
-    margin-bottom: 20px;
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.profile-avatar img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    object-fit: cover;
+.profile-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-/* Profile Details Styling */
+.profile-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid #0070d2;
+}
+
+.profile-info {
+  flex: 2;
+  font-size: 18px;
+  color: #333;
+}
+
+.profile-info p {
+  margin: 8px 0;
+}
+
 .profile-details {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
 }
 
-.profile-details h2 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+.details-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.profile-details p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    margin: 8px 0;
+.details-box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.profile-details p strong {
-    color: #333;
+.details-box p {
+  margin: 5px 0;
+  font-size: 14px;
 }
 
-/* Styling the Renewal Button */
-lightning-button {
-    display: block;
-    margin: 20px auto 0;
-    background-color: #0070d2;  /* Blue color */
-    border-radius: 4px;
-    padding: 12px 24px;  /* Add padding for better button size */
-    font-size: 16px;
-    text-align: center;
-    width: auto;  /* Prevent button from stretching full width */
-    box-sizing: border-box;  /* Ensure padding and border are included in button's width */
+.slds-text-color_error {
+  color: red;
+  font-size: 14px;
 }
 
-lightning-button:hover {
-    background-color: #005fa3;  /* Darker blue when hovered */
+.lightning-button {
+  margin-bottom: 15px;
 }
 
-lightning-button:focus {
-    outline: none;
-    border: 2px solid #005fa3;  /* Add focus styling */
-}
+@media (max-width: 768px) {
+  .profile-header {
+      flex-direction: column;
+      align-items: center;
+  }
 
-/* Error Handling */
-p.error {
-    color: red;
-    text-align: center;
-    font-size: 16px;
-}
+  .profile-image-container {
+      padding-right: 0;
+      margin-bottom: 20px;
+  }
 
-/* Overall Layout */
-.slds-p-horizontal_medium {
-    padding-left: 15px;
-    padding-right: 15px;
+  .profile-info {
+      text-align: center;
+  }
+
+  .profile-container {
+      padding: 15px;
+  }
+
+  .details-section {
+      flex-direction: column;
+  }
 }

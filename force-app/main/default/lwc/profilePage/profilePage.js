@@ -2,59 +2,43 @@ import { LightningElement, wire } from 'lwc';
 import getLoggedInMemberProfile from '@salesforce/apex/MemberProfileController.getLoggedInMemberProfile';
 
 export default class ProfilePage extends LightningElement {
-    member;
-    error;
-    avatarUrl = 'https://www.example.com/your-avatar-image.jpg';  // Customize your avatar URL
+    profileData = {};
+    showMoreDetails = false;
 
-    // Fetch member profile data from Apex
     @wire(getLoggedInMemberProfile)
-    wiredMember({ error, data }) {
+    wiredProfileData({ error, data }) {
         if (data) {
-            this.member = data;
-            this.error = undefined;
+            this.profileData = data;
         } else if (error) {
-            this.error = 'Failed to load member profile data: ' + error.body.message;
-            this.member = undefined;
+            console.error('Error fetching profile data:', error);
         }
     }
 
-    // Getter methods for the fields with conditional logic
-
-    get membershipPlan() {
-        return this.member?.Membership_Plan__r ? this.member.Membership_Plan__r.Name : 'Not Available';
+    get formattedProfile() {
+        return {
+            Name: this.profileData.Name || 'Not Available',
+            Full_Name: this.profileData.Full_Name__c || 'Not Available',
+            Phone: this.profileData.Phone__c || 'Not Available',
+            Email: this.profileData.Email__c || 'Not Available',
+            Address: this.profileData.Address__c || 'Not Available',
+            Gender: this.profileData.Gender__c || 'Not Available',
+            Date_of_Birth: this.profileData.Date_of_Birth__c || 'Not Available',
+            Start_Date: this.profileData.Start_Date__c || 'Not Available',
+            End_Date: this.profileData.End_Date__c || 'Not Available',
+            Membership_Status: this.profileData.Membership_Status__c || 'Not Available',
+            Membership_Plan: this.profileData.Membership_Plan__c || 'Not Available',
+            Subscription: this.profileData.Subscription__c || 'Not Available',
+            Fitness_Trainer: this.profileData.Fitness_Trainer__c || 'Not Available',
+            Fitness_Classes: this.profileData.Fitness_Classes__c || 'Not Available',
+            Diet_chart: this.profileData.Diet_chart__c || 'Not Available',
+            Related_Gym_Location: this.profileData.Related_Gym_Location__c || 'Not Available',
+            Enquiry: this.profileData.Enquiry__c || 'Not Available',
+            Payment: this.profileData.Payment__c || 'Not Available',
+            rofile_Image_URL: this.profileData.Profile_Image_URL__c || 'https://via.placeholder.com/150'
+        };
     }
 
-    get subscription() {
-        return this.member?.Subscription__r ? this.member.Subscription__r.Name : 'Not Available';
-    }
-
-    get fitnessTrainer() {
-        return this.member?.Fitness_Trainer__r ? this.member.Fitness_Trainer__r.Name : 'Not Available';
-    }
-
-    get fitnessClasses() {
-        return this.member?.Fitness_Classes__r ? this.member.Fitness_Classes__r.Name : 'Not Available';
-    }
-
-    get dietChart() {
-        return this.member?.Diet_chart__r ? this.member.Diet_chart__r.Name : 'Not Available';
-    }
-
-    get gymLocation() {
-        return this.member?.Related_Gym_Location__r ? this.member.Related_Gym_Location__r.Name : 'Not Available';
-    }
-
-    get enquiry() {
-        return this.member?.Enquiry__r ? this.member.Enquiry__r.Name : 'Not Available';
-    }
-
-    get payment() {
-        return this.member?.Payment__r ? this.member.Payment__r.Name : 'Not Available';
-    }
-
-    // Handle renewal button click
-    handleRenewalClick() {
-        // Handle renewal logic here
-        alert('Renewal Clicked!');
+    toggleDetails() {
+        this.showMoreDetails = !this.showMoreDetails;
     }
 }

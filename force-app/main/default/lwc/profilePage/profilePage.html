@@ -1,42 +1,77 @@
 <template>
-    <lightning-card title="My Profile">
-      <div class="slds-p-horizontal_medium">
-        <template if:true={member}>
-          <!-- Avatar Section -->
-          <div class="profile-avatar">
-            <img src={avatarUrl} alt="Avatar" />
+  <lightning-card title="Profile" icon-name="custom:custom63">
+      <template if:true={profileData}>
+          <div class="profile-container">
+              <!-- Basic Info Section -->
+              <div class="profile-header">
+                  <div class="profile-image-container">
+                      <!-- Dynamically loaded profile image -->
+                      <img src={formattedProfile.Profile_Image_URL} alt="Profile Image" class="profile-image"/>
+                  </div>
+                  <div class="profile-info">
+                      <p><strong>Name: </strong>{formattedProfile.Name}</p>
+                      <p><strong>Email: </strong>{formattedProfile.Email}</p>
+                  </div>
+              </div>
+
+              <!-- Show More Button & Additional Details -->
+              <div class="profile-details">
+                  <lightning-button label="Show Detail" onclick={toggleDetails}></lightning-button>
+                  <template if:true={showMoreDetails}>
+                      <div class="details-section">
+                          <div class="details-box">
+                              <p><strong>Phone: </strong>{formattedProfile.Phone}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Address: </strong>{formattedProfile.Address}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Gender: </strong>{formattedProfile.Gender}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Date of Birth: </strong>{formattedProfile.Date_of_Birth}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Start Date: </strong>{formattedProfile.Start_Date}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>End Date: </strong>{formattedProfile.End_Date}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Membership Status: </strong>{formattedProfile.Membership_Status}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Membership Plan: </strong>{formattedProfile.Membership_Plan}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Subscription: </strong>{formattedProfile.Subscription}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Fitness Trainer: </strong>{formattedProfile.Fitness_Trainer}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Fitness Classes: </strong>{formattedProfile.Fitness_Classes}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Diet Chart: </strong>{formattedProfile.Diet_chart}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Related Gym Location: </strong>{formattedProfile.Related_Gym_Location}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Enquiry: </strong>{formattedProfile.Enquiry}</p>
+                          </div>
+                          <div class="details-box">
+                              <p><strong>Payment: </strong>{formattedProfile.Payment}</p>
+                          </div>
+                      </div>
+                  </template>
+              </div>
           </div>
-  
-          <!-- Profile Details Section -->
-          <div class="profile-details">
-            <h2>{member.Full_Name__c}</h2>
-            <p><strong>Member ID:</strong> {member.Id}</p>
-            <p><strong>Phone:</strong> {member.Phone__c}</p>
-            <p><strong>Email:</strong> {member.Email__c}</p>
-            <p><strong>Address:</strong> {member.Address__c}</p>
-            <p><strong>Gender:</strong> {member.Gender__c}</p>
-            <p><strong>Date of Birth:</strong> {member.Date_of_Birth__c}</p>
-            <p><strong>Start Date:</strong> {member.Start_Date__c}</p>
-            <p><strong>End Date:</strong> {member.End_Date__c}</p>
-            <p><strong>Membership Status:</strong> {member.Membership_Status__c}</p>
-  
-            <!-- Using getter methods to handle conditional rendering -->
-            <p><strong>Membership Plan:</strong> {membershipPlan}</p>
-            <p><strong>Subscription:</strong> {subscription}</p>
-            <p><strong>Fitness Trainer:</strong> {fitnessTrainer}</p>
-            <p><strong>Fitness Classes:</strong> {fitnessClasses}</p>
-            <p><strong>Diet Chart:</strong> {dietChart}</p>
-            <p><strong>Related Gym Location:</strong> {gymLocation}</p>
-            <p><strong>Enquiry:</strong> {enquiry}</p>
-            <p><strong>Payment:</strong> {payment}</p>
-  
-            <lightning-button label="Click here to Renewal" onclick={handleRenewalClick}></lightning-button>
-          </div>
-        </template>
-        <template if:true={error}>
-          <p>{error}</p>
-        </template>
-      </div>
-    </lightning-card>
-  </template>
-  
+      </template>
+
+      <template if:true={error}>
+          <div class="slds-text-color_error">{error}</div>
+      </template>
+  </lightning-card>
+</template>
