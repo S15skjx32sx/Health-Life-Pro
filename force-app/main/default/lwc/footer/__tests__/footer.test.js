@@ -1,5 +1,5 @@
 import { createElement } from '@lwc/engine-dom';
-import Footer from 'c/footer';
+import Footer from 'c/footer/footer';
 
 describe('c-footer', () => {
     afterEach(() => {
