@@ -1,0 +1,24 @@
+public with sharing class MemberProfileController {
+    @AuraEnabled(cacheable=true)
+    public static Member__c getLoggedInMemberProfile() {
+        
+        Id currentUserId = UserInfo.getUserId();
+
+        return [
+            SELECT Id, Name, Full_Name__c, Phone__c, Email__c, Address__c, 
+                   Gender__c, Date_of_Birth__c, Start_Date__c, End_Date__c, 
+                   Membership_Status__c, 
+                   Membership_Plan__c, 
+                   Subscription__c, 
+                   Fitness_Trainer__c, 
+                   Fitness_Classes__c, 
+                   Diet_chart__c, 
+                   Related_Gym_Location__c, 
+                   Enquiry__c, 
+                   Payment__c
+            FROM Member__c
+            WHERE OwnerId = :currentUserId
+            LIMIT 1
+        ];
+    } 
+}
