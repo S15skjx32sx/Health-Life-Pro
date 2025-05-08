@@ -1,0 +1,199 @@
+img{
+    width:auto;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 30px;
+  }
+  
+  .highlight {
+    color: green;
+}
+
+.underline {
+  width: 80px;
+  height: 3px;
+  background-color: green;
+  margin: 10px auto 30px auto;
+  border-radius: 10px;
+}
+.dietChart{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+.dietChart_left{
+    padding-left: 50px;
+    font-family:  sans-serif;
+}
+
+.dietChart_left h1{
+    font-size:32px;
+}
+
+.dietyChart_left p{
+    font-size:16px;
+}
+
+.dietChart_right img{
+    max-width: 40vw;
+
+}
+
+    .diet-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 2rem;
+        background-color: #f7f7f7;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #2c3e50;
+    }
+    .description {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #555;
+    }
+    .diet-section {
+        margin-bottom: 2rem;
+    }
+    .diet-section h2 {
+        color: #34495e;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    ul {
+        list-style: disc;
+        margin-left: 20px;
+    }
+
+   
+      .preworkout-section {
+        max-width: 1500px;
+        margin: auto;
+        background-color: #ffffff9f;
+        padding: 30px;
+        border-radius: 0px;
+        /*box-shadow: 0 4px 8px rgba(0,0,0,0.1);*/
+      }
+    
+      h2 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        margin-top: 30px;
+      }
+    
+      .preworkout-section h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+      }
+
+      .food-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+      }
+      .food-item img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 20px;
+      }
+      .food-item-content {
+        flex: 1;
+      }
+      .food-item-content h3 {
+        margin: 0 0 10px;
+        color: #27ae60;
+      }
+      .food-item-content p {
+        margin: 0;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 600px) {
+        .food-item {
+          flex-direction: column;
+          align-items: center;
+        }
+        .food-item img {
+          margin-bottom: 15px;
+          margin-right: 0;
+        }
+        .food-item-content h3 {
+          text-align: center;
+        }
+      }
+
+      .postworkout-section {
+        max-width: 1500px;
+        margin: auto;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+       /* box-shadow: 0 4px 8px rgba(0,0,0,0.1);*/
+      }
+      h2 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        margin-top: 30px;
+      }
+    
+      .postworkout-section h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+      }
+      .food-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+      }
+      .food-item img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 20px;
+      }
+      .food-item-content {
+        flex: 1;
+      }
+      .food-item-content h3 {
+        margin: 0 0 10px;
+        color: #27ae60;
+      }
+      .food-item-content p {
+        margin: 0;
+        color: #555;
+        line-height: 1.6;
+      }
+      @media (max-width: 600px) {
+        .food-item {
+          flex-direction: column;
+          align-items: center;
+        }
+        .food-item img {
+          margin-bottom: 15px;
+          margin-right: 0;
+        }
+        .food-item-content h3 {
+          text-align: center;
+        }
+      }

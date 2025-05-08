@@ -1,0 +1,47 @@
+<template>
+    <div class="container">
+         <!-- Hamburger Menu -->
+         <div class="hamburger" onclick={toggleSidebar}>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Sidebar  -->
+        <aside class={sidebarClass}>
+            <ul>
+                <li data-specialization="Personal Training" onclick={handleSpecializationClick}>Personal Trainer</li>
+                <li data-specialization="Yoga" onclick={handleSpecializationClick} class={yogaClass} >Yoga</li>
+                <li data-specialization="Nutrition" onclick={handleSpecializationClick}>Nutrition</li>
+                <li data-specialization="Strength Training" onclick={handleSpecializationClick}>Strength Training</li>
+                <li data-specialization="Cardio" onclick={handleSpecializationClick}>Cardio</li>
+                <li data-specialization="Pilates" onclick={handleSpecializationClick}>Pilates</li>
+            </ul>
+        </aside>
+
+        <!-- Trainers Section -->
+        <section class="trainer-grid">
+            <template for:each={filteredTrainers} for:item="trainer">
+                <div key={trainer.trainer.Id}>
+                    <div class="trainer-card" data-id={trainer.trainer.Id} onclick={handleTrainerClick}>
+                        <img src={trainerImageUrl} alt="Trainer Photo" class="TrainerImages" />
+                        <h3>{trainer.trainer.Name}</h3>
+                        <p>{trainer.trainer.Specialization__c}</p>
+                        <p>{trainer.trainer.Years_of_Experience__c} years experience</p>
+                    </div>
+
+                    <!-- Show details only if expandedTrainerId === trainer.trainer.Id -->
+                    <template lwc:if={trainer.isExpanded}>
+                        <div class="trainer-details">
+                            <p><strong>Bio:</strong> {trainer.trainer.Bio__c}</p>
+                            <p><strong>Email:</strong> {trainer.trainer.Email_Address__c}</p>
+                            <p><strong>Phone:</strong> {trainer.trainer.Phone_Number__c}</p>
+                            <p><strong>Certifications:</strong> {trainer.trainer.Certifications__c}</p>
+                            <p><strong>Rate:</strong> ₹{trainer.trainer.Hourly_Rate__c}/hr</p>
+                            <p><strong>Location:</strong> {trainer.trainer.Assigned_Location__c}</p>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </section>
+    </div>
+</template>

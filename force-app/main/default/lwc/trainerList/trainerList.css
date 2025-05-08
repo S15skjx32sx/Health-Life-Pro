@@ -1,0 +1,153 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    min-height: 1005vh;
+    background-color: #f4f4f4;
+  }
+  
+  .mobile-dropdown {
+    display: none;
+    margin: 1rem;
+  }
+  
+  
+  .sidebar {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    width: 220px;
+    margin-top: 20px;
+    border-radius: 10px; /* curved corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .sidebar li:hover {
+    background-color: #28a745; /* green hover */
+    color: white;
+  }
+  
+  
+  .sidebar li.active {
+    background: #28a745;
+    color: white;
+  }
+  
+  
+  .trainer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  .trainer-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+    background-color: white;
+  }
+  
+  .trainer-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .trainer-card img {
+    max-width: 100%;
+    border-radius: 12px;
+    height: auto;
+  }
+  
+  .trainer-card h3 {
+    font-weight: bold;
+    margin: 10px 0 5px;
+  }
+  
+  .trainer-details {
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  /* Sidebar buttons */
+li[data-specialization] {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect */
+li[data-specialization]:hover {
+    background-color: #f0f0f0;
+    color: #00d246;
+}
+
+/* Active/selected specialization */
+li[data-specialization].selected,
+li[data-specialization].active {
+    background-color: #00d20b;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+  
+  @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+  
+    .sidebar {
+        width: 100%;
+        display: none;
+    }
+  
+    .sidebar.open {
+        display: block;
+    }
+  
+    .hamburger {
+        display:inline-table;
+        background: #918c8c;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    @media screen and (max-width: 568px) {
+      .mobile-dropdown {
+          display: block;
+      }
+  
+      .sidebar {
+          display: none;
+      }
+  
+      .trainer-grid {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+  
+      .trainer-card {
+          width: 90%;
+      }
+  }
+  }
+  

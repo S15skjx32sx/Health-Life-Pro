@@ -1,0 +1,52 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+    </template>
+
+    <div class="container">
+        <div class="sidebar">
+            <template for:each={computedClassTypes} for:item="item">
+                <div key={item.type}
+                     class={item.class}
+                     data-type={item.type}
+                     onclick={handleTypeClick}>
+                    {item.type}
+                </div>
+            </template>
+        </div>
+
+         <!-- Main Content -->
+         <div class="content">
+            <template if:true={loading}>
+                <div class="spinner-container">
+                    <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+        <template if:false={isLoading}>
+            <template if:true={filteredClasses.length}>
+                <div class="class-grid">
+                    <template for:each={filteredClasses} for:item="cls">
+                        <div key={cls.Id} class="class-card">
+                            <h3>{cls.Class_Type__c}</h3>
+                            <p><strong>Status:</strong> {cls.Status__c}</p>
+                            <p><strong>📅 Date:</strong> {cls.formattedDate}</p>
+                            <p><strong>⏰ Time:</strong> {cls.formattedTime}</p>
+                            <p><strong>Duration:</strong> {cls.Duration_Minutes__c} minutes</p>
+                            <p><strong>Location:</strong> {cls.Location__c}</p>
+                            <p><strong>Max Participants:</strong> {cls.Max_Participants__c}</p>
+                            <p><strong>Enrolled:</strong> {cls.Enrolled_Members__c}</p>
+                            <p><strong>Description:</strong> {cls.Class_Description__c}</p>
+                            <p><strong>Note:</strong> {cls.Notes__c}</p>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </template>
+            <template if:false={filteredClasses.length}>
+                <p class="no-class">No classes found for {selectedType}</p>
+            </template>
+    
+    </div>
+    </div>
+</template>

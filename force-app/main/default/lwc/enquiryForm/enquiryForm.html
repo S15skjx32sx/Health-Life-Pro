@@ -1,0 +1,46 @@
+<template>
+    <div class="container">
+      <div class="image-section">
+        <img src={appImage} alt="Application Image" />
+      </div>
+  
+      <div class="form-section">
+        <h1>Enquiry<span class="highlight"> Form</span></h1>
+        <div class="underline"></div>
+        <form onsubmit={handleSubmit}>
+          <lightning-input label="Full Name" value={fullname} onchange={handleNameChange} required></lightning-input>
+          <lightning-input label="Phone" type="tel" value={phone} onchange={handlePhoneChange} required></lightning-input>
+          <lightning-input label="Email" type="email" value={email} onchange={handleEmailChange} required></lightning-input>
+  
+          <lightning-combobox
+            label="Enquiry Type"
+            value={enquiryType}
+            placeholder="Select Enquiry Type"
+            options={enquiryTypeOptions}
+            onchange={handleEnquiryTypeChange}>
+          </lightning-combobox>
+  
+          <lightning-input label="Preferred Contact Time" value={preferredContactTime} onchange={handlePreferredContactTimeChange}></lightning-input>
+  
+          <lightning-combobox
+            label="Message Status"
+            value={status}
+            placeholder="Select Status"
+            options={messageStatusOptions}
+            onchange={handleStatusChange}>
+          </lightning-combobox>
+  
+          <lightning-input type="date" label="Response Date" value={responseDate} onchange={handleResponseDateChange}></lightning-input>
+  
+          <lightning-textarea label="Message" value={message} onchange={handleMessageChange} required></lightning-textarea>
+  
+          <lightning-input label="Trainer" value={trainerLookup} onchange={handleTrainerLookupChange} placeholder="Trainer Name or ID"></lightning-input>
+  
+          <lightning-input type="checkbox" label="Send Registration Link" checked={sendRegLink} onchange={handleSendRegLinkChange}></lightning-input>
+  
+          <lightning-button type="submit" label="Submit" variant="brand"></lightning-button>
+        </form>
+      </div>
+    </div>
+  </template>
+  
