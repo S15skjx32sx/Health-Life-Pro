@@ -1,5 +1,5 @@
-/* Hero Section */
-.hero {
+  /* Hero Section */
+  .hero {
     height: 50vh;
     background: url('../image/hero.jpg') center/cover no-repeat;
     display: flex;

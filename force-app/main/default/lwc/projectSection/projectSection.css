@@ -1,0 +1,28 @@
+.project_title{
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-bottom: 4px solid rgb(32, 111, 201);
+    border-bottom-width: thick;
+    width: 15%;
+}
+
+.project_title h1{
+    font-size: 30px;
+    font-weight: 600;
+    columns: #333;
+}
+.image_section{
+    width: 80%;
+}
+
+.para_text{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    word-spacing: 2px;
+}
+
+.accordion_section{
+    --slds-c-accordion-heading-text-color:#333;
+    --slds-c-accordion-heading-font-size:1.2rem;
+}

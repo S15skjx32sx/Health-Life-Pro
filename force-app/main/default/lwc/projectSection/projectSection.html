@@ -1,0 +1,41 @@
+<template>
+    <div class="slds-p-around_none slds-m-top_x-small slds-m-bottom_medium">
+        <lightning-layout multiple-rows>
+            <!--left side column-->
+            <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="6" class="slds-align_absolute-center slds-order_2 slds-large-order_1">
+                <div class="slds-p-around_medium">
+                <div class="project_title">
+                    <h1>Project</h1>
+                </div>
+
+                <template if:true={projectData}>
+
+                    <lightning-accordion class="accordion_section">
+                        <template for:each={projectData} for:item="project">
+
+                        <lightning-accordion-section key={project.id} name={project.Name} label={project.Name}>
+                            <div class="slds-m-top_small">
+                                <p class="para_text">{project.Description}</p>
+                                <p class="para_text slds-p-top_medium"><strong>Technology : </strong>{project.Technology}</p>
+                                <p class="para_text slds-p-top_medium" if:true={project.Website}>
+                                    <strong>Website : </strong> <a target="_blank" href={project.Website}>{project.Website}</a>
+                                </p>
+                            </div>
+
+                        </lightning-accordion-section>
+                        </template>
+                    </lightning-accordion>
+
+                </template>
+            </div>
+            </lightning-layout-item>
+
+            <!--right side column-->
+            <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="6" class="slds-align_absolute-center slds-order_1 slds-large-order_2">
+            <div class="slds-p-around_medium image_section">
+                <img src={projectImage}/>
+            </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

@@ -25,6 +25,17 @@ body {
     margin-top: 30px;
   }
   
+  .highlight {
+    color: green;
+}
+
+.underline {
+  width: 80px;
+  height: 3px;
+  background-color: green;
+  margin: 10px auto 30px auto;
+  border-radius: 10px;
+}
   
   .image-section {
     flex: 1;

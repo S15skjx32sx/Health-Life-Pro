@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-var-p-around_small">
+        <lightning-button
+        variant="brand"
+        label="Demo Data"
+        title="Demo Data into csv"
+        icon-name="utility:download"
+        onclick={clickHandler}
+        disabled={checkRecord}
+        ></lightning-button>
+    </div>
+    <lightning-datatable key-field="id" data={accountdata} columns={columns}>
+    </lightning-datatable>
+</template>

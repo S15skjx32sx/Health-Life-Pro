@@ -1,0 +1,97 @@
+<template>
+    <div class="main-container">
+        <!-- Choose Your Plan Section -->
+        <div class="plan-selection">
+            <h1>CHOOSE <span class="highlight">PLAN</span></h1>
+            <div class="underline"></div>
+            <div class="plans-container">
+                <div class="plan-card">
+                    <lightning-button label="Pro" onclick={handlePlanSelection} data-plan="Pro" class="plan-button" variant={planVariantPro}></lightning-button>
+                    <div class="plan-content">
+                        <p><strong>Pro:</strong> Ideal for beginners. Includes access to gym equipment, 1 personal training session/month, and diet consultation.</p>
+                        <p><strong>Price: ₹12,000</strong></p>
+                    </div>
+                </div>
+                <div class="plan-card">
+                    <lightning-button label="Pro Plus" onclick={handlePlanSelection} data-plan="Pro Plus" class="plan-button" variant={planVariantPlus}></lightning-button>
+                    <div class="plan-content">
+                        <p><strong>Pro Plus:</strong> Great for intermediate users. Includes everything in Pro + unlimited group classes, weekly health reports, and 24/7 chat support.</p>
+                        <p><strong>Price: ₹25,000</strong></p>
+                    </div>
+                </div>
+                <div class="plan-card">
+                    <lightning-button label="Pro Max" onclick={handlePlanSelection} data-plan="Pro Max" class="plan-button" variant={planVariantMax}></lightning-button>
+                    <div class="plan-content">
+                        <p><strong>Pro Max:</strong> Best for serious fitness goals. Includes all Pro Plus features + personal coach, wearable tracker, and home workout equipment.</p>
+                        <p><strong>Price: ₹42,000</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscription Form Section -->
+        <template if:true={isPlanSelected}>
+            <div class="form-container">
+                <form onsubmit={handleSubmit} class="subscription-form">
+                    <h2>Subscription Form</h2>
+
+                    <lightning-input 
+                        label="Name" 
+                        value={name} 
+                        onchange={handleInputChange} 
+                        data-id="name" 
+                        required>
+                    </lightning-input>
+
+                    <lightning-input 
+                        label="Subscription Name" 
+                        value={subscriptionName} 
+                        onchange={handleInputChange} 
+                        data-id="subscriptionName" 
+                        required>
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="date" 
+                        label="Membership Start Date" 
+                        value={membershipstartDate} 
+                        onchange={handleInputChange} 
+                        data-id="membershipstartDate" 
+                        required>
+                    </lightning-input>
+
+                    <lightning-input 
+                        type="date" 
+                        label="Membership End Date" 
+                        value={membershipendDate} 
+                        onchange={handleInputChange} 
+                        data-id="membershipendDate" 
+                        required>
+                    </lightning-input>
+
+                    <lightning-combobox
+                        label="Subscription Type"
+                        value={subscriptionType}
+                        placeholder="Select Subscription Type"
+                        options={subscriptionTypeOptions}
+                        onchange={handleInputChange}
+                        data-id="subscriptionType">
+                    </lightning-combobox>
+
+                    <lightning-input 
+                        label="Amount" 
+                        type="number"
+                        value={amount} 
+                        onchange={handleInputChange}
+                        data-id="amount"
+                        required>
+                    </lightning-input>
+
+                    <div class="submit-btn">
+                        <lightning-button type="submit" label="Submit" variant="brand"></lightning-button>
+                    </div>
+                </form>
+            </div>
+        </template>
+    </div>
+</template>

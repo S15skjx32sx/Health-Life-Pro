@@ -1,0 +1,49 @@
+.about_div{
+    background-color: rgb(233, 237, 239);
+}
+.skills_div{
+    padding-top: 20px;
+}
+
+.para_text{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    word-spacing: 2px;
+}
+
+.profile_title{
+    margin-bottom: 20px;
+    font-weight: 800;
+    border-bottom: 4px solid rgb(32, 111, 201);
+    border-bottom-width: thick;
+    width: 15%;
+}
+
+.profile_title h1{
+    font-size: 30px;
+    font-weight: 800;
+    color: black;
+}
+
+.profile_pic img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    height: auto;
+    width: 80%;
+    margin: 0 0px 0 65px;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width:900px) {
+    .profile_pic img{
+        border-radius: 1rem;
+        width: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 2px;
+    }
+}

@@ -64,7 +64,7 @@ export default class EnquiryForm extends LightningElement {
     }
 
     handleSubmit() {
-        console.log("hello jeet");
+        console.log("hello");
         console.log(this.fullname);
         console.log(this.email);
         console.log(this.phone);

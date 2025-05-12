@@ -1,0 +1,82 @@
+<template>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="payment-options">
+            <h3>Payment Methods</h3>
+            <div class={getCardMethodClass} data-method="card" onclick={selectMethod}>Payment by Card</div>
+            <div class={getBankMethodClass} data-method="bank" onclick={selectMethod}>Internet Banking</div>
+            <div class={getPayMethodClass} data-method="pay" onclick={selectMethod}>Apple / Google Pay</div>
+        </div>
+
+        <!-- Center Form -->
+        <div class="form-area">
+            <!-- Card Payment -->
+            
+            <template if:true={isCardSelected}>
+                <div class="cards">
+                    <img src={visa} alt="Visa" />
+                    <img src={mastercard} alt="MasterCard" />
+                    <img src={amex} alt="Amex" />
+                    <img src={discover} alt="Discover" />
+                </div>
+
+    <form onsubmit={handleSubmit}>
+        <lightning-input name="cardNumber" label="Card Number" type="text" value={cardNumber} onchange={handleInputChange}></lightning-input>
+        <lightning-input
+            name="expiry"
+            label="Expiry (MM/YY)"
+            type="month"
+            value={expiry}
+            onchange={handleInputChange}>
+        </lightning-input>
+        <lightning-input
+            name="cvv"
+            label="CVV"
+            type="password"
+            maxlength="3"
+            pattern="\d{3}"
+            message-when-pattern-mismatch="Enter a valid 3-digit CVV"
+            value={cvv}
+            onchange={handleInputChange}>
+        </lightning-input>
+        <lightning-input name="email" label="Email" type="email" value={email} onchange={handleInputChange}></lightning-input>
+        <lightning-input name="amount" label="Amount" type="number" value={amount} onchange={handleInputChange}></lightning-input>
+        <lightning-textarea name="notes" label="Notes" value={notes} onchange={handleInputChange}></lightning-textarea>
+
+        <lightning-button type="submit" label="Pay Now" variant="brand"></lightning-button>
+    </form>
+</template>
+            <!-- Internet Banking -->
+            <template if:true={isBankSelected}>
+                <h3>Select Your Bank</h3>
+                <select>
+                    <option>HDFC Bank</option>
+                    <option>ICICI Bank</option>
+                    <option>SBI</option>
+                    <option>Axis Bank</option>
+                </select>
+                <p style="margin-top: 1rem;">You will be redirected to your bank's secure page.</p>
+                <button onclick={submitInternetBanking}>Proceed to Pay</button>
+            </template>
+
+            <!-- Apple / Google Pay -->
+            <template if:true={isPaySelected}>
+                <h3>Pay with Apple / Google Pay</h3>
+                <p>Make sure your device is configured for Apple Pay or Google Pay.</p>
+                <button onclick={submitPay}>Pay Now</button>
+            </template>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="order-info">
+            <h3>Order Information</h3>
+            <p><strong>Order Description</strong><br>Test Payment</p>
+            <div class="cards">
+                <img src={visa} alt="Visa" />
+                <img src={mastercard} alt="MasterCard" />
+                <img src={amex} alt="Amex" />
+                <img src={discover} alt="Discover" />
+            </div>
+        </div>
+    </div>
+</template>

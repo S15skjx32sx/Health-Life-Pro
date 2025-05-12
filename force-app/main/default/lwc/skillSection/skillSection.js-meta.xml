@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="skillName1" type="String" label="Skill 1" description="what skill do you have" default="HTML/CSS"/>
+            <property name="skillBarValue1" type="String" label="Skill Value 1" description="How confident you are" default="80"/>
+
+            <property name="skillName2" type="String" label="Skill 2" description="what skill do you have" default="Jaascript"/>
+            <property name="skillBarValue2" type="String" label="Skill Value 2" description="How confident you are" default="85"/>
+
+            <property name="skillName3" type="String" label="Skill 3" description="what skill do you have" default="Core Java"/>
+            <property name="skillBarValue3" type="String" label="Skill Value 3" description="How confident you are" default="70"/>
+
+            <property name="skillName4" type="String" label="Skill 4" description="what skill do you have" default="Salesforce CRM"/>
+            <property name="skillBarValue4" type="String" label="Skill Value 4" description="How confident you are" default="85"/>
+
+            <property name="skillName5" type="String" label="Skill 5" description="what skill do you have" default="Apex Programming"/>
+            <property name="skillBarValue5" type="String" label="Skill Value 5" description="How confident you are" default="77"/>
+
+            <property name="skillName6" type="String" label="Skill 6" description="what skill do you have" default=" Lightning Web Components (LWC)"/>
+            <property name="skillBarValue6" type="String" label="Skill Value 6" description="How confident you are" default="85"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

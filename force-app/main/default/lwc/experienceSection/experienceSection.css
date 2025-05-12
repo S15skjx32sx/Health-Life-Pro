@@ -1,0 +1,92 @@
+.about_div{
+    background-color: rgb(233, 237, 239);
+}
+.skills_div{
+    padding-top: 20px;
+}
+
+.para_text{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    word-spacing: 2px;
+}
+
+.profile_title{
+    margin-bottom: 20px;
+    font-weight: 800;
+    border-bottom: 4px solid rgb(32, 111, 201);
+    border-bottom-width: thick;
+    width: 15%;
+}
+
+.profile_title h1{
+    font-size: 30px;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+}
+
+.profile_pic img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    height: auto;
+    width: 80%;
+    margin: 0 0px 0 65px;
+    background-repeat: no-repeat;
+}
+
+.experience-content {
+    flex: 2 1 600px;
+  }
+  
+  .experience-card {
+    background-color: white;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .experience-card h2 {
+    margin-bottom: 4px;
+    font-size: 20px;
+    color: #1a73e8;
+  }
+  
+  .experience-card h3 {
+    margin: 0;
+    font-weight: normal;
+    color: #555;
+  }
+  
+  .duration {
+    font-size: 14px;
+    color: #777;
+    margin-top: 4px;
+    margin-bottom: 12px;
+  }
+  
+  .experience-card ul {
+    padding-left: 20px;
+  }
+  
+  .experience-card ul li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+
+  @media screen and (max-width:900px) {
+    .profile_pic img{
+        border-radius: 1rem;
+        width: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 2px;
+    }
+}

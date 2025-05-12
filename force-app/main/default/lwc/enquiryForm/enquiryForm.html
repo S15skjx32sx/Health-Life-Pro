@@ -5,7 +5,8 @@
     </div>
 
     <div class="form-section">
-      <h1>Enquiry Form</h1>
+      <h1>Enquiry<span class="highlight"> Form</span></h1>
+      <div class="underline"></div>
       <form onsubmit={handleSubmit}>
         <lightning-input label="Full Name" value={fullname} onchange={handleNameChange} required></lightning-input>
         <lightning-input label="Phone" type="tel" value={phone} onchange={handlePhoneChange} required></lightning-input>
